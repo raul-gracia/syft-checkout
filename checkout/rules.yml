@@ -1,0 +1,8 @@
+---
+- :type: 'product'
+  :product_code: '001'
+  :min_qty: 2
+  :new_price: 8.5
+- :type: 'total'
+  :min_total: 60
+  :discount: 0.1

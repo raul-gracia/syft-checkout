@@ -1,0 +1,10 @@
+---
+- :code: '001'
+  :name: 'Lavender Heart'
+  :price: 9.25
+- :code: '002'
+  :name: 'Personalised Cufflinks'
+  :price: 45.00
+- :code: '003'
+  :name: 'Kids T-Shirt'
+  :price: 19.95
