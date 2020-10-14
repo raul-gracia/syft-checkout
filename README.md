@@ -1,3 +1,15 @@
+## Install/Setup
+
+Run `bin/setup`
+
+## Tests
+
+Run `bundle exec rspec`
+
+## Proof of Concept
+
+run `bin/run`
+
 ## Challenge
 
 Our client is an online marketplace, here is a sample of some of the products available on our site:

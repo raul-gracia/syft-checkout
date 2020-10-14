@@ -18,29 +18,17 @@ module Checkout
 
     def scan(product_code)
       product = find_product(product_code)
-      if product
-        @basket.add_item(product, 1)
-      else
-        raise "Product can't be found"
-      end
+      raise "Product can't be found" unless product
+
+      @basket.add_item(product, 1)
     end
 
     def total
-      puts 'before'
-      puts @basket.inspect
-      puts "\n\n"
       product_rules.each do |rule|
         @basket.apply_rule(rule)
       end
-      puts 'apply rules'
-      puts @basket.inspect
-      puts "\n\n"
       subtotal = @basket.subtotal
-      puts 'subtotal'
-      puts @basket.inspect
-      puts "\n\n"
-
-      total = total_rule.apply(subtotal)
+      total = total_rule.apply_to(subtotal)
 
       total.round(2)
     end

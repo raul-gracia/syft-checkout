@@ -6,16 +6,16 @@ class ProductRule
     @new_price = rule[:new_price]
   end
 
-  def apply(line_item)
-    return unless applies?(line_item)
+  def apply_to(line_item)
+    return unless applies_to?(line_item)
 
     line_item.discounted_price = new_price
   end
 
   private
 
-  def applies?(line_item)
-    line_item.product.code == product_code &&
+  def applies_to?(line_item)
+    line_item.product_code == product_code &&
       line_item.qty >= min_qty
   end
 end

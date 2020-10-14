@@ -1,5 +1,4 @@
 class LineItem
-  attr_reader :product
   attr_accessor :discounted_price, :qty
 
   def initialize(product, qty = 0)
@@ -9,6 +8,10 @@ class LineItem
   end
 
   def total
-    discounted_price ? qty * discounted_price : qty * product.price
+    discounted_price ? qty * discounted_price : qty * @product.price
+  end
+
+  def product_code
+    @product.code
   end
 end

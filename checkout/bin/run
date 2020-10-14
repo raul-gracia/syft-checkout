@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'checkout'
+
+rules = Rules.load('rules.yml')
+co = Checkout::Checkout.new(rules)
+co.scan('001')
+co.scan('002')
+co.scan('003')
+puts 'Basket: 001,002,003'
+puts "Total price: £#{co.total}"
+puts
+
+co = Checkout::Checkout.new(rules)
+co.scan('001')
+co.scan('003')
+co.scan('001')
+puts 'Basket: 001,003,001'
+puts "Total price: £#{co.total}"
+puts
+
+co = Checkout::Checkout.new(rules)
+co.scan('001')
+co.scan('002')
+co.scan('001')
+co.scan('003')
+puts 'Basket: 001,002,001,003'
+puts "Total price: £#{co.total}"

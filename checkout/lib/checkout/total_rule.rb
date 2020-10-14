@@ -6,15 +6,15 @@ class TotalRule
     @discount = rule[:discount]
   end
 
-  def apply(subtotal)
-    return subtotal unless applies?(subtotal)
+  def apply_to(subtotal)
+    return subtotal unless applies_to?(subtotal)
 
     (subtotal * (1 - discount)).to_f
   end
 
   private
 
-  def applies?(subtotal)
+  def applies_to?(subtotal)
     subtotal >= min_total
   end
 end
